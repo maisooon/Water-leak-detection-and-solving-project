@@ -1,0 +1,48 @@
+//Maisoon Falqi
+//Water leak detection and solving (embedded systems course project)
+
+const int buzzer=8;
+int rainPin = A0;
+const int RELAY_PIN = A5;  // the Arduino pin, which connects to the IN pin of relay
+int greenLED_L= 2;
+int redLED_R = 3;
+ //you can adjust the threshold value
+int thresholdValue = 700;
+
+void setup(){
+  pinMode(RELAY_PIN, OUTPUT);
+  pinMode(buzzer,OUTPUT);
+  pinMode(2,INPUT);
+  pinMode(rainPin, INPUT);
+  pinMode(greenLED_L, OUTPUT);
+  pinMode(redLED_R, OUTPUT);
+  digitalWrite(greenLED_L, LOW);
+  digitalWrite(redLED_R, LOW);
+  digitalWrite(RELAY_PIN, HIGH);  // close valve 5 seconds
+  Serial.begin(9600);
+}
+
+void loop() {
+  //read the input on analog pin 0:
+  int sensorValue = analogRead(rainPin);
+  Serial.print(sensorValue);
+  if(sensorValue < thresholdValue){
+    
+    Serial.println(" - It's wet");
+    digitalWrite(greenLED_L, LOW);
+    digitalWrite(redLED_R, HIGH);
+    digitalWrite(buzzer,HIGH);
+    digitalWrite(RELAY_PIN, LOW); // close valve
+    delay(2000);
+    digitalWrite(buzzer,LOW);
+    delay(2000);
+  }
+  else {
+    Serial.println(" - It's dry");
+    digitalWrite(greenLED_L, HIGH);
+    digitalWrite(redLED_R, LOW);
+    digitalWrite(buzzer,LOW);
+    digitalWrite(RELAY_PIN, HIGH); // open valve 
+  }
+  delay(1000);
+}
