@@ -10,9 +10,10 @@ about the leaking and the valve will close the water from passing through
 the pipes to prevent any further leaking. In case of no leaking the water will 
 be distributed through pipes safely
 
+![IMG_7090 6266](https://user-images.githubusercontent.com/86265487/208792195-77bac701-42ad-4c29-b03e-8199befed6be.jpg)
+
 
 ![projecgt pic](https://user-images.githubusercontent.com/86265487/208780664-45279fd8-3e10-499a-b0ef-4190f5cb2abb.jpg)
-
 
 
 ![image](https://user-images.githubusercontent.com/86265487/208780501-0ac5c289-6f5a-4993-b69c-62421d6eba82.png)
